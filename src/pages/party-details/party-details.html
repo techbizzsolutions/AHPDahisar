@@ -1,0 +1,16 @@
+
+<ion-header>
+
+  <ion-navbar color="header">
+    <ion-title *ngIf="data">{{data.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngIf="data" class="detailspage">
+      <img [src]="data.img">
+      <p [innerHTML]="data.longdesc"></p>
+  </div>
+</ion-content>

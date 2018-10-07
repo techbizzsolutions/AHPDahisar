@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="header">
+      <ion-buttons left>
+          <button ion-button menuToggle>
+              <ion-icon name="md-list"></ion-icon>
+          </button>
+      </ion-buttons>
+    <ion-title>
+      AHP Dahisar
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager class="slidermain">
+
+    <ion-slide >
+      <img src="assets/imgs/s1.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/imgs/s2.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/imgs/s3.png">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/imgs/s4.png">
+    </ion-slide>
+  </ion-slides>
+
+  <div class="detailds" *ngFor="let item of details;">
+    <h6>{{item.title}}</h6>
+    <p>{{item.shortdec}}</p>
+    <ion-item>
+      <button ion-button block small (click)="partydetails(item)">
+        see more
+     </button>
+    </ion-item>
+  </div>
+  <ion-item>
+      <button ion-button block small (click)="joinus()">
+          Become Member
+       </button>
+  </ion-item>
+ 
+</ion-content>

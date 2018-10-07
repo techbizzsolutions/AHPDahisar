@@ -1,0 +1,113 @@
+<ion-header>
+
+  <ion-navbar color="header">
+    <ion-title>Join Now</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form [formGroup]="register">
+        <ion-item>
+            <ion-label floating>Full Name</ion-label>
+            <ion-input type="text" formControlName="Name"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!register.controls['Name'].valid && register.controls['Name'].touched">Please Enter Full Name</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Father/Husband Full Name</ion-label>
+            <ion-input type="text" formControlName="FatherORHusbandName"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!register.controls['FatherORHusbandName'].valid && register.controls['FatherORHusbandName'].touched">Please Enter Father/Husband Full Name</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Adhar Number</ion-label>
+            <ion-input type="number" formControlName="AdharNumber"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!register.controls['AdharNumber'].valid && register.controls['AdharNumber'].touched">Please Enter Adhar Number</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="email" formControlName="Email"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!register.controls['Email'].valid && register.controls['Email'].touched">Please Enter Email id</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Mobile Number</ion-label>
+            <ion-input type="number" formControlName="Mobile"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!register.controls['Mobile'].valid && register.controls['Mobile'].touched">Please Enter Mobile Number</div>
+        </div>
+        <ion-item>
+            <ion-textarea placeholder="Local Address" rows="4" formControlName="LocalAddress"></ion-textarea>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!register.controls['LocalAddress'].valid && register.controls['LocalAddress'].touched">Enter Local Address</div>
+        </div>
+        <ion-item>
+            <ion-textarea placeholder="Permanent Address" rows="4" formControlName="PermanentAddress"></ion-textarea>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!register.controls['PermanentAddress'].valid && register.controls['PermanentAddress'].touched">Enter Permanent Address</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Occupation Business if any details</ion-label>
+            <ion-input type="text" formControlName="Occupation"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!register.controls['Occupation'].valid && register.controls['Occupation'].touched">Please Enter Occupation</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Qualification</ion-label>
+            <ion-input type="text" formControlName="Qualification"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!register.controls['Qualification'].valid && register.controls['Qualification'].touched">Please Enter Qualification</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Member of Political party</ion-label>
+            <ion-input type="text" formControlName="MemberofPoliticalParty"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!register.controls['MemberofPoliticalParty'].valid && register.controls['MemberofPoliticalParty'].touched">Please Enter Party Name</div>
+        </div>
+        <ion-item>
+            <ion-label floating>Reason to join AHP</ion-label>
+            <ion-input type="text" formControlName="ReasontoJoinAHP"></ion-input>
+        </ion-item>
+        <div padding-horizontal>
+            <div class="alert" *ngIf="!register.controls['ReasontoJoinAHP'].valid && register.controls['ReasontoJoinAHP'].touched">Please Enter Reason to join AHP</div>
+        </div>
+        <ion-item>
+            <ion-label>Select Party</ion-label>
+            <ion-select interface="popover" [ngModelOptions]="{standalone: true}" [(ngModel)]="party">
+                <ion-option value="अंतर्राष्ट्रीय हिन्दू परिषद्">अंतर्राष्ट्रीय हिन्दू परिषद्</ion-option>
+                <ion-option value="राष्ट्रीय बजरंग दल">राष्ट्रीय बजरंग दल</ion-option>
+                <ion-option value="राष्ट्रीय किसान परिषद्">राष्ट्रीय किसान परिषद्</ion-option>
+                <ion-option value="राष्ट्रीय मजदूर परिषद्">राष्ट्रीय मजदूर परिषद्</ion-option>
+                <ion-option value="राष्ट्रीय महिला परिषद्">राष्ट्रीय महिला परिषद्</ion-option>
+                <ion-option value="राष्ट्रीय छात्र परिषद">राष्ट्रीय छात्र परिषद</ion-option>
+            </ion-select>
+        </ion-item>
+        <div class="button_div">
+          <ion-row>
+            <ion-col col-6>
+                <button ion-button [disabled]="!register.valid" (click)="logForm()" block icon-right>
+                    Join Now
+                </button>
+            </ion-col>
+            <ion-col col-6>
+                <button ion-button block icon-right (click)="close()">
+                    Cancel
+                </button>
+            </ion-col>
+          </ion-row>
+        </div>
+    </form>
+</ion-content>

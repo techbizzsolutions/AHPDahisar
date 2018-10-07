@@ -1,0 +1,27 @@
+page-home {
+  .slidermain{
+    height: 200px;
+    img{
+        //height: 160px !important;
+    }
+   }
+  .swiper-pagination-bullet-active {
+    background: #ff9933 !important;
+    }
+
+    .detailds{
+        margin: 10px;
+        border: 1px solid #C0C0C0;
+        h6{
+            background-color: #C0C0C0;
+            margin: 0px !important;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: color($colors, primary) !important;
+        }
+        p{
+            margin: 10px 10px 10px 10px !important;
+        }
+    }
+}
