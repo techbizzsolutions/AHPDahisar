@@ -8,6 +8,11 @@
     <ion-title>
       AHP Dahisar
     </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="share()">
+          <ion-icon name="md-share"></ion-icon>
+      </button>
+  </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -27,20 +32,18 @@
       <img src="assets/imgs/s4.png">
     </ion-slide>
   </ion-slides>
-
+  <ion-item>
+    <button ion-button block small (click)="joinus()">   
+        सदस्य बनें
+     </button>
+</ion-item>
   <div class="detailds" *ngFor="let item of details;">
     <h6>{{item.title}}</h6>
     <p>{{item.shortdec}}</p>
     <ion-item>
-      <button ion-button block small (click)="partydetails(item)">
-        see more
+      <button ion-button  small (click)="partydetails(item)">
+        अधिक जानकारी
      </button>
     </ion-item>
-  </div>
-  <ion-item>
-      <button ion-button block small (click)="joinus()">
-          Become Member
-       </button>
-  </ion-item>
- 
+  </div> 
 </ion-content>

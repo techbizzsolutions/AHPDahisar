@@ -48,12 +48,20 @@ export class JoinNowPage {
       return;
     }
     this.register.value.Party = this.party;
-    console.log(this.register.value);
+    var rowdata = ["************"];
+    var index = 0;
+
+    for(var prop in this.register.value) {
+      rowdata.push(index +'. ' + prop + ": " + this.register.value[prop]);
+      index ++;
+    }
+
+    console.log(rowdata.join('\r\n'));
     // Check if sharing via email is supported
     this.socialSharing.canShareViaEmail().then(() => {
       // Sharing via email is possible
       // Share via email
-      this.socialSharing.shareViaEmail(this.register.value, 'Become Member', ['hrdrawat8@gmail.com']).then(() => {
+      this.socialSharing.shareViaEmail(rowdata.join('\r\n'), 'Become Member', ['hrdrawat8@gmail.com']).then(() => {
         // Success!
       }).catch(() => {
         // Error!

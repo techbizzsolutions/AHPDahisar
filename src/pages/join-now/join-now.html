@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar color="header">
-    <ion-title>Join Now</ion-title>
+    <ion-title>बनें सदस्य</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -10,18 +10,18 @@
 <ion-content padding>
     <form [formGroup]="register">
         <ion-item>
-            <ion-label floating>Full Name</ion-label>
+            <ion-label floating>Full Name/ पूरा नाम</ion-label>
             <ion-input type="text" formControlName="Name"></ion-input>
         </ion-item>
         <div padding-horizontal>
-            <div class="alert" *ngIf="!register.controls['Name'].valid && register.controls['Name'].touched">Please Enter Full Name</div>
+            <div class="alert" *ngIf="!register.controls['Name'].valid && register.controls['Name'].touched">Please Enter Full Name/ पूरा नाम</div>
         </div>
         <ion-item>
-            <ion-label floating>Father/Husband Full Name</ion-label>
+            <ion-label floating>Father/Husband Full Name/ पूरा नाम</ion-label>
             <ion-input type="text" formControlName="FatherORHusbandName"></ion-input>
         </ion-item>
         <div padding-horizontal>
-            <div class="alert" *ngIf="!register.controls['FatherORHusbandName'].valid && register.controls['FatherORHusbandName'].touched">Please Enter Father/Husband Full Name</div>
+            <div class="alert" *ngIf="!register.controls['FatherORHusbandName'].valid && register.controls['FatherORHusbandName'].touched">Please Enter Father/Husband Full Name/ पूरा नाम</div>
         </div>
         <ion-item>
             <ion-label floating>Adhar Number</ion-label>

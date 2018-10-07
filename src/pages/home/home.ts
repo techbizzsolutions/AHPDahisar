@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @Component({
   selector: 'page-home',
@@ -58,13 +59,23 @@ export class HomePage {
       img:'assets/imgs/4.jpg'
     }
   ]
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,private socialSharing: SocialSharing) {
 
   }
 
   partydetails(item)
   {
     this.navCtrl.push('PartyDetailsPage',item);
+  }
+
+  share()
+  {
+    // Check if sharing via email is supported
+    this.socialSharing.share("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged", null, null, 'https://play.google.com/store/apps/details?id=com.technotwit.ahpdahisar').then(() => {
+      // Sharing via email is possible
+    }).catch(() => {
+      // Sharing via email is not possible
+    });
   }
 
   joinus()
